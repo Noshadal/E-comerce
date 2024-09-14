@@ -5,7 +5,7 @@ import Login from './component/Login';
 import Home from './component/Home';
 import Card from './component/Card';
 import Product from './component/Product';
-import Loading from './component/loading';
+import Loading from './component/Loading';
 import Profile from './component/profile';
 import Addtocard from './component/Addtocard';
 import Notfound from './Notfount'
