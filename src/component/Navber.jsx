@@ -1,9 +1,7 @@
 import React,{useEffect,useState} from "react";
 import { db } from "./firbase.cofig";
-import { collection, query, where, onSnapshot ,getDocs} from "firebase/firestore";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { Link } from "react-router-dom";
-import 'animate.css';
-
 const Navber = () => {
   const [userData, setUserData] = useState(null);
   const id = localStorage.getItem('uid');

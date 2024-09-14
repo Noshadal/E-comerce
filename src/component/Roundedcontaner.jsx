@@ -1,6 +1,5 @@
 import React from 'react';
 import Round from './Round';
-import shan from '../assets/shan.jpeg';
 import badam from './roundedpic/badam.jpeg';
 import dlcheni from './roundedpic/dlcheni.jpeg';
 import ilaichi from './roundedpic/ilaichi.jpeg';
