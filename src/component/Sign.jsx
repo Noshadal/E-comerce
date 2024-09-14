@@ -1,6 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'; 
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, db } from './firbase.cofig';
+import { setDoc, doc } from 'firebase/firestore';
 
-const Sign = () => {
+function Sign() {
+  const navigate = useNavigate();
+
+  
+  const [firstName, setfirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [psw, setPsw] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [city, setCity] = useState('');
+  const [address, setAddress] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    try {
+      const response = await createUserWithEmailAndPassword(auth, email, psw);
+      const uid = response.user.uid;
+      await setDoc(doc(db, "users",uid), {
+        firstName,
+        lastName,
+        email,
+        uid,
+        phone,
+        city,
+        psw,
+        address,
+      });
+
+      
+      Swal.fire({
+        title: 'User Successfully Registered!',
+        icon: 'success',
+      });
+      localStorage.setItem('uid', uid);
+      navigate('/login');
+    } catch (error) {
+      Swal.fire({
+        title: 'Something Went Wrong!',
+        text: error.message,
+        icon: 'error',
+        confirmButtonText: 'Okay',
+      });
+    }
+  };
   return (
     <div className='flex flex-col justify-center items-center h-[100vh]'>
       <form className="w-[65vw] max-w-md mx-auto border-2 h-[80vh] p-6">
@@ -12,6 +61,7 @@ const Sign = () => {
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
+            onChange={(e) => setEmail(e.target.value)} 
           />
           <label
             htmlFor="floating_email"
@@ -29,6 +79,7 @@ const Sign = () => {
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
+            onChange={(e) => setPsw(e.target.value)} 
           />
           <label
             htmlFor="floating_password"
@@ -41,11 +92,11 @@ const Sign = () => {
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="text"
-            name="repeat_password"
             id="floating_repeat_password"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
+            onChange={(e) => setAddress(e.target.value)}
           />
           <label
             htmlFor="floating_repeat_password"
@@ -59,11 +110,13 @@ const Sign = () => {
           <div className="relative z-0 mb-5 group">
             <input
               type="text"
-              name="floating_first_name"
-              id="floating_first_name"
+              name="floating_firstName_name"
+              id="floating_firstName_name"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
+              onChange={(e) => setfirstName(e.target.value)}
+
             />
             <label
               htmlFor="floating_first_name"
@@ -80,6 +133,8 @@ const Sign = () => {
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
+              onChange={(e) => setLastName(e.target.value)} 
+
             />
             <label
               htmlFor="floating_last_name"
@@ -100,6 +155,8 @@ const Sign = () => {
               className="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
+              onChange={(e) => setPhone(e.target.value)} 
+
             />
             <label
               htmlFor="floating_phone"
@@ -116,6 +173,8 @@ const Sign = () => {
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
+              onChange={(e) => setCity(e.target.value)} 
+
             />
             <label
               htmlFor="floating_company"
@@ -129,11 +188,12 @@ const Sign = () => {
         <div className=' flex justify-center items-center flex-col gap-10'>
         <button
           type="submit"
+          onClick={handleSubmit}
           className="w-56 bg-blue-700 text-[20px] h-12 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  "
         >
           Submit
         </button>
-        <a href="/login" className='text-blue-800 font-semibold hover:text-blue-500'>I have already account</a>
+        <Link to="/login" className='text-blue-800 font-semibold hover:text-blue-500'>I have already account</Link>
         </div>
       </form>
     </div>
