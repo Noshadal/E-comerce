@@ -20,22 +20,22 @@ import Cloves from './cardpic/Cloves.jpeg';
 const Storecard = () => {
   return (
     <div className='flex flex-wrap m-7'>
-      <Card heading='National Classic Mayo' price='300Rs' img={mayo} vote='9.0'/>
-      <Card heading='National Ketchup 400gm Fresh Tomato' price='180Rs' img={nationalketchup} vote='3.0'/>
-      {/* <Card heading='National Ketchup 1kg' price='350Rs' img={} vote='5.0'/> */}
-      <Card heading='National Ketchup 500gm' price='200Rs' img={katup} vote='3.6'/>
-      <Card heading='Shan Special Bombay Biryani' price='60Rs' img={briyani} vote='9.0'/>
-      <Card heading='Shan Special Tikka Masala' price='60Rs' img={swkh} vote='9.0'/>
-      <Card heading='Shan Special Tandoori Masala' price='60Rs' img={tandori} vote='9.0'/>
-      {/* <Card heading='Shan Special Chicken Masala' price='60Rs' img={} vote='9.0'/> */}
-      <Card heading='Almond 120gm Lahori' price='800Rs' img={ALmond} vote='9.0'/>
-      <Card heading='Cumin Seeds 250gm' price='320Rs' img={Zerra} vote='9.0'/>
-      <Card heading='Star Anise 120gm Pure and Afghani' price='220Rs' img={Starannes} vote='9.0'/>
-      <Card heading='Cloves (Syzygium)' price='200Rs' img={Cloves} vote='9.0'/>
-      <Card heading='Custard Vanilla Flavour' price='50Rs' img={Custurd} vote='9.0'/>
-      <Card heading='Strawberry Sweet Jelly (Happy Home)' price='40Rs' img={jelly} vote='9.0'/>
-      <Card heading='Pudding Cardamom Flavour' price='50Rs' img={puding} vote='9.0'/>
-      <Card heading='Jelly Egg Flavour' price='40Rs' img={najelly} vote='9.0'/>
+      <Card heading='National Classic Mayo' price='30' img={mayo} vote='9.0'/>
+      <Card heading='National Ketchup 400gm Fresh Tomato' price='20' img={nationalketchup} vote='3.0'/>
+      {/* <Card heading='National Ketchup 1kg' price='350' img={} vote='5.0'/> */}
+      <Card heading='National Ketchup 500gm' price='15' img={katup} vote='3.6'/>
+      <Card heading='Shan Special Bombay Biryani' price='20' img={briyani} vote='9.0'/>
+      <Card heading='Shan Special Tikka Masala' price='3' img={swkh} vote='9.0'/>
+      <Card heading='Shan Special Tandoori Masala' price='2' img={tandori} vote='9.0'/>
+      {/* <Card heading='Shan Special Chicken Masala' price='60' img={} vote='9.0'/> */}
+      <Card heading='Almond 120gm Lahori' price='200' img={ALmond} vote='9.0'/>
+      <Card heading='Cumin Seeds 250gm' price='20' img={Zerra} vote='9.0'/>
+      <Card heading='Star Anise 120gm Pure and Afghani' price='220' img={Starannes} vote='9.0'/>
+      <Card heading='Cloves (Syzygium)' price='10' img={Cloves} vote='9.0'/>
+      <Card heading='Custard Vanilla Flavour' price='5' img={Custurd} vote='9.0'/>
+      <Card heading='Strawberry Sweet Jelly (Happy Home)' price='40' img={jelly} vote='9.0'/>
+      <Card heading='Pudding Cardamom Flavour' price='5' img={puding} vote='9.0'/>
+      <Card heading='Jelly Egg Flavour' price='3' img={najelly} vote='9.0'/>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import Product from './component/Product';
 import Loading from './component/loading';
 import Profile from './component/profile';
 import Addtocard from './component/Addtocard';
+import Notfound from './Notfount'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
      <BrowserRouter basename="/">
     <Routes>
       <Route path="/" element={<Loading />} />
+      <Route path="*" element={<Notfound />} />
       <Route path="/add" element={<Addtocard />} />
       <Route path="/product" element={<Product />} />
       <Route path="/profile" element={<Profile />} />
