@@ -4,11 +4,9 @@ import Zerra from './cardpic/zerra.jpeg';
 import nationalketchup from './cardpic/katchup.jpeg';
 import mayo from './cardpic/mayo.jpeg';
 import katup from './cardpic/katup.jpeg';
-// import  from './cardpic/new_katup.jpeg';  // Removed space
 import briyani from './cardpic/briyani.jpeg';
 import swkh from './cardpic/tika.jpeg';
 import tandori from './cardpic/tandori.jpeg';
-// import  from './cardpic/cheken_masla.jpeg';  // Removed space
 import ALmond from './cardpic/Almond.jpeg';
 import Starannes from './cardpic/Starannes.jpeg';
 import Custurd from './cardpic/Custurd.jpeg';
@@ -22,12 +20,10 @@ const Storecard = () => {
     <div className='flex flex-wrap m-7'>
       <Card heading='National Classic Mayo' price='30' img={mayo} vote='9.0'/>
       <Card heading='National Ketchup 400gm Fresh Tomato' price='20' img={nationalketchup} vote='3.0'/>
-      {/* <Card heading='National Ketchup 1kg' price='350' img={} vote='5.0'/> */}
       <Card heading='National Ketchup 500gm' price='15' img={katup} vote='3.6'/>
       <Card heading='Shan Special Bombay Biryani' price='20' img={briyani} vote='9.0'/>
       <Card heading='Shan Special Tikka Masala' price='3' img={swkh} vote='9.0'/>
       <Card heading='Shan Special Tandoori Masala' price='2' img={tandori} vote='9.0'/>
-      {/* <Card heading='Shan Special Chicken Masala' price='60' img={} vote='9.0'/> */}
       <Card heading='Almond 120gm Lahori' price='200' img={ALmond} vote='9.0'/>
       <Card heading='Cumin Seeds 250gm' price='20' img={Zerra} vote='9.0'/>
       <Card heading='Star Anise 120gm Pure and Afghani' price='220' img={Starannes} vote='9.0'/>
