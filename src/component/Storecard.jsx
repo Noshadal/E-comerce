@@ -9,7 +9,7 @@ import swkh from './cardpic/tika.jpeg';
 import tandori from './cardpic/tandori.jpeg';
 import ALmond from './cardpic/Almond.jpeg';
 import Starannes from './cardpic/Starannes.jpeg';
-import Custurd from './cardpic/Custurd.jpeg';
+// import Custurd from './cardpic/Custurd.jpeg';
 import jelly from './cardpic/jelly.jpeg';
 import puding from './cardpic/puding.jpeg';
 import najelly from './cardpic/najelly.jpeg';
@@ -28,7 +28,7 @@ const Storecard = () => {
       <Card heading='Cumin Seeds 250gm' price='20' img={Zerra} vote='9.0'/>
       <Card heading='Star Anise 120gm Pure and Afghani' price='220' img={Starannes} vote='9.0'/>
       <Card heading='Cloves (Syzygium)' price='10' img={Cloves} vote='9.0'/>
-      <Card heading='Custard Vanilla Flavour' price='5' img={Custurd} vote='9.0'/>
+      {/* <Card heading='Custard Vanilla Flavour' price='5' img={Custurd} vote='9.0'/> */}
       <Card heading='Strawberry Sweet Jelly (Happy Home)' price='40' img={jelly} vote='9.0'/>
       <Card heading='Pudding Cardamom Flavour' price='5' img={puding} vote='9.0'/>
       <Card heading='Jelly Egg Flavour' price='3' img={najelly} vote='9.0'/>
